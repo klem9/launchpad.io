@@ -21,7 +21,7 @@ function NavBar({user, setUser}){
             <Link className="mid_nav_items"to="/coins">Coins</Link>
             <Link className="mid_nav_items"to="/defi">DeFi Protocols</Link>
             <Link className="mid_nav_items"to="/yourportfolio">Your Portfolio</Link>
-            {/* <Link className="mid_nav_items"to="/yourwallet">Your Wallet</Link> */}
+            <Link className="mid_nav_items"to="/yourwallet">Your Wallet</Link>
         </div>
         <div className="login_section">
         <style type="text/css">

@@ -20,7 +20,25 @@
 }
 
 hr{
-    margin-top: 5vh;
+    margin-top: 3vh;
     margin-bottom: 3vh;
     padding-top: 3vh;
+}
+
+.wallet_section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.generate_button{
+    margin-top: 5vh;
+    margin-left: 30vh;
+    margin-right: 30vh;
+    margin-bottom: 5vh;
+}
+
+.wallet_generate_text{
+    font-size: 2vh;
 }

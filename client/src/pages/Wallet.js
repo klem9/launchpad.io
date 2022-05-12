@@ -1,45 +1,57 @@
 import CoinKey from 'coinkey';
-import { useState } from 'react';
+import { Button } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
+import "./pages.css"
+import Table from '../components/Table/Table';
 
 function Wallet(){
+    const [ethDetails, setEthDetails]= useState([])
+    const [btcPrivate, setBtcPrivate]= useState([])
+    const [btcPublic, setBtcPublic]= useState([])
+    
 
-
-        var wallet = new CoinKey.createRandom();
+    function generateBtcAddress(){ 
+        const wallet = new CoinKey.createRandom();
         const private_key = wallet.privateKey.toString('hex');
         const public_key = wallet.publicAddress
 
-    // fetch(`http://localhost:3001/api/v2/create`,{
-    //     method: "POST",
-    //         headers: {
-    //         "Content-Type": "application/json",
-    //         Accept: "application/json"  ,
-    //     },
-    //     body: JSON.stringify({
-    //         "password": "Klemloh99@test",
-    //         "api-code": "4d275ab9-284b-4a9a-ad18-f049f44e65e3",
-    //         "email": "klemenseloh@gmail.com",
-    //         "label": "test",
-    //         "priv": private_key
-    //     })
-    // })
+        setBtcPrivate(private_key)
+        setBtcPublic(public_key)
 
-    fetch(`https://api.blockcypher.com/v1/eth/main/addrs`,{
-        method: "POST",
-            headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json"  ,
         }
-    })
-    .then(res =>res.json())
-    .then(data => console.log(data))
 
-
+    function generateEthAddress(){
+        fetch(`https://api.blockcypher.com/v1/eth/main/addrs?token=e9022ea01faa43a0b030a79534ca06fe`,{
+            method: "POST",
+                headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"  ,
+            }
+        })
+        .then(res =>res.json())
+        .then(data => setEthDetails(data))
+    }
 
 
     return(
         <>
         {/* 4d275ab9-284b-4a9a-ad18-f049f44e65e3 */}
-        <p> hello</p>
+        <h1 className="header"> Generate wallet addresses</h1>
+        <hr/>
+        <div className="wallet_section"> 
+            <h2>Bitcoin </h2>
+            <Button className="generate_button" onClick={generateBtcAddress}> Click to generate bitcoin address</Button>
+            <p className="wallet_generate_text"> Public bitcoin address key, you can deposit your bitcoin using this wallet address: {btcPublic}</p>
+            <p className="wallet_generate_text"> Private bitcoin key, do not share this with anyone: {btcPrivate}</p>
+        </div>
+        <hr/>
+        <div className="wallet_section"> 
+            <h2>Ethereum </h2>
+            <Button className="generate_button" onClick={generateEthAddress}> Click to generate bitcoin address</Button>
+            <p className="wallet_generate_text">Public ethereum key: {ethDetails.public}</p>
+            <p className="wallet_generate_text">Private ethereum key, do not share this with anyone: {ethDetails.private}</p>
+            <p className="wallet_generate_text">Ethereum address for deposits: {ethDetails.address}</p>
+        </div>
         </>
     )
 }

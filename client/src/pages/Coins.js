@@ -68,6 +68,7 @@ function Coins({data}){
                 </Accordion.Body>
             </Accordion.Item>
         </Accordion>
+        <hr/>
         <Table className="data_table" data={data} render={renderCoins} headings= {headings} />
       </div>
     )

@@ -72,13 +72,16 @@ function DeFi(){
                 <Accordion.Header>Description</Accordion.Header>
                 <Accordion.Body>
                 DeFi is short for Decentralized Finance, which is a broad term referring to any blockchain-based project that seeks to fill regular financial activites in a decentralized manner. On Launchpad, DeFi protocols specifically encompass liquidity pools involving stablecoins.
-
+                </Accordion.Body>
+                <Accordion.Body> 
                 Stablecoins are cryptocurrencies that are pegged to the US dollar, meaning that 1 stablecoin should always be exchangeable for 1 USD. 
-
+                </Accordion.Body>
+                <Accordion.Body>
                 Liquidity pools are used to facilitate borrowing and transactions of stablecoins, and involves holders of stablecoins locking in their tokens into the pool, and taking ownership of a specific % of the pool, with the fees paid by users of the pools (borrowers and exchangers) being returned to the user in the form of interest. 
                 </Accordion.Body>
             </Accordion.Item>
         </Accordion>
+        <hr/>
         <Table className="data_table" data={dataTable} render={renderDeFi} headings={headings} />
     </div>
     )

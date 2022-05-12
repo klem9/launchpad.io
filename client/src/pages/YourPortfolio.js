@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import Table from "../components/Table/Table";
 import PortfolioRemoval from "../components/PortfolioRemoval/PortfolioRemoval";
+import "./pages.css"
 
 function YourPortfolio({prices}){
     const [portfolio, setPortfolio] = useState([])
