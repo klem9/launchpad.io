@@ -1,0 +1,26 @@
+.header{
+    font-weight: bold;
+    margin: 2vh;
+}
+
+.description{
+    padding-left: 35vh;
+    padding-right: 35vh;
+}
+
+.data_table{
+    display: fixed;
+}
+#current_value{
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    font-style: italic;
+    font-size: 4vh;
+}
+
+hr{
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+    padding-top: 3vh;
+}

@@ -1,0 +1,2 @@
+class Defi < ApplicationRecord
+end

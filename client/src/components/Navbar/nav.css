@@ -1,0 +1,59 @@
+
+.nav {
+  background-color: #9ca19c;
+  position: relative;
+  min-height: 5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.homeLogoBox{
+  margin: 0;
+  right: 92.5%;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+
+}
+
+#homeLogo{
+  height: 90%;
+  width: 80px;
+}
+
+.mid_nav{
+  margin: 0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #3b3939;
+  display: flex;
+  flex-direction: row;
+}
+
+.mid_nav_items{
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em 5em 0.5em 5em;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #012169;
+  margin-top: 1.25em;
+}
+
+/* .mid_nav_items:hover {
+  color: #5094a6;
+} */
+
+.login_section{
+  margin: 0;
+  right: 5%;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif  ;
+}
+
+
+
+  
